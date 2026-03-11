@@ -10,15 +10,16 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  // TODO: Update this when the GitHub repository is public
-  url: 'https://Ahmednoorani258.github.io',
+  // TODO: Update this with your GitHub username
+  url: 'https://your-github-username.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/ai-book-new/',
+  // For local development, use '/'
+  baseUrl: '/',
 
   // GitHub pages deployment config.
-  organizationName: 'Ahmednoorani258', // Usually your GitHub org/user name.
-  projectName: 'ai-book-new', // Usually your repo name.
+  organizationName: 'your-github-username', // Your GitHub org/user name.
+  projectName: 'ai-book-new', // Your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -53,7 +54,8 @@ const config: Config = {
       title: 'Physical AI & Humanoid Robotics',
       logo: {
         alt: 'Physical AI Logo',
-        src: 'img/logo.png',
+        src: '/img/logo.png',
+        href: '/',
       },
       items: [
         {
@@ -61,6 +63,15 @@ const config: Config = {
           sidebarId: 'textbookSidebar',
           position: 'left',
           label: 'Textbook',
+        },
+        {
+          to: '/docs/glossary',
+          label: 'Glossary',
+          position: 'left',
+        },
+        {
+          type: 'custom-authNavbarItem',
+          position: 'right',
         },
         // TODO: Add link to GitHub repo when public
         // {
@@ -103,7 +114,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Discussions',
-              href: 'https://github.com/Ahmednoorani258/ai-book-new/discussions',
+              href: 'https://github.com/your-github-username/ai-book-new/discussions',
             },
           ],
         },
@@ -112,7 +123,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/Ahmednoorani258/ai-book-new',
+              href: 'https://github.com/your-github-username/ai-book-new',
             },
           ],
         },

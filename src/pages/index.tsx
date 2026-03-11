@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -11,7 +11,7 @@ import styles from './index.module.css';
 import '../css/landing-page.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -72,11 +72,38 @@ function HomepageRoadmap() {
         <p className="hero__subtitle">
           Follow a structured learning path to master Physical AI and Humanoid Robotics.
         </p>
-        <div className={styles.roadmapVisual}>
-          {/* Placeholder for actual roadmap visual */}
-          <img src={useBaseUrl('/img/roadmap_placeholder.svg')} alt="Course Roadmap Placeholder" />
+        <div className="roadmapPathway">
+          <div className="roadmapStep">
+            <div className="stepNumber">0</div>
+            <h4>Foundations</h4>
+            <p>Physical AI</p>
+          </div>
+          <div className="roadmapLine"></div>
+          <div className="roadmapStep">
+            <div className="stepNumber">1</div>
+            <h4>ROS 2</h4>
+            <p>Nervous System</p>
+          </div>
+          <div className="roadmapLine"></div>
+          <div className="roadmapStep">
+            <div className="stepNumber">2</div>
+            <h4>Simulators</h4>
+            <p>Digital Twin</p>
+          </div>
+          <div className="roadmapLine"></div>
+          <div className="roadmapStep">
+            <div className="stepNumber">3</div>
+            <h4>Isaac</h4>
+            <p>AI Robot Brain</p>
+          </div>
+          <div className="roadmapLine"></div>
+          <div className="roadmapStep">
+            <div className="stepNumber">4</div>
+            <h4>VLA</h4>
+            <p>Foundation Models</p>
+          </div>
         </div>
-        <div className={styles.buttons}>
+        <div className={styles.buttons} style={{ marginTop: '2rem' }}>
           <Link
             className="button button--secondary button--lg"
             to="/docs">
@@ -132,7 +159,7 @@ function HomepageModules() {
         </p>
         <div className="row">
           {/* Module 0 */}
-          <div className="col col--4">
+          <div className="col col--4 margin-bottom--lg">
             <div className={clsx('card', styles.moduleCard)}>
               <div className="card__header">
                 <h3>Module 0: Foundational AI Principles</h3>
@@ -146,7 +173,7 @@ function HomepageModules() {
             </div>
           </div>
           {/* Module 1 */}
-          <div className="col col--4">
+          <div className="col col--4 margin-bottom--lg">
             <div className={clsx('card', styles.moduleCard)}>
               <div className="card__header">
                 <h3>Module 1: The Robotic Nervous System (ROS 2)</h3>
@@ -160,7 +187,7 @@ function HomepageModules() {
             </div>
           </div>
           {/* Module 2 */}
-          <div className="col col--4">
+          <div className="col col--4 margin-bottom--lg">
             <div className={clsx('card', styles.moduleCard)}>
               <div className="card__header">
                 <h3>Module 2: The Digital Twin (Gazebo & Unity)</h3>
@@ -174,7 +201,7 @@ function HomepageModules() {
             </div>
           </div>
           {/* Module 3 */}
-          <div className="col col--4">
+          <div className="col col--4 margin-bottom--lg">
             <div className={clsx('card', styles.moduleCard)}>
               <div className="card__header">
                 <h3>Module 3: The AI Robot Brain (NVIDIA Isaac)</h3>
@@ -188,7 +215,7 @@ function HomepageModules() {
             </div>
           </div>
           {/* Module 4 */}
-          <div className="col col--4">
+          <div className="col col--4 margin-bottom--lg">
             <div className={clsx('card', styles.moduleCard)}>
               <div className="card__header">
                 <h3>Module 4: Vision–Language–Action (VLA)</h3>
@@ -209,7 +236,7 @@ function HomepageModules() {
 
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Home`}

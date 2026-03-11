@@ -1,0 +1,143 @@
+/* Translation Panel Styles */
+
+.translationPanel {
+  position: relative;
+}
+
+.toggleButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 0.5rem;
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggleButton:hover {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.toggleButton.enabled {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: #10b981;
+  color: white;
+}
+
+.toggleButton.enabled:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.toggleButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loadingSpinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.translationInfo {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 320px;
+  max-width: calc(100vw - 2rem);
+  background: var(--ifm-background-surface-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--ifm-border-color);
+  padding: 1rem;
+  z-index: 100;
+}
+
+.infoText {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.5;
+}
+
+.disableButton {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 0.5rem;
+  color: var(--ifm-font-color-base);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.disableButton:hover {
+  background: var(--ifm-color-secondary-light);
+}
+
+.loginPrompt {
+  background: var(--ifm-background-surface-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ifm-border-color);
+  text-align: center;
+}
+
+.loginPrompt p {
+  margin: 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.9rem;
+}
+
+/* Urdu text styling */
+.urdu-text {
+  direction: rtl;
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  font-size: 1.2em;
+  line-height: 2;
+}
+
+/* Translation overlay for full page translation */
+.urdu-translation-overlay {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  max-width: 400px;
+  z-index: 99;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .translationInfo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    border-radius: 1rem 1rem 0 0;
+  }
+}

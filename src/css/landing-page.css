@@ -12,11 +12,9 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    var(--ifm-color-primary-lighter) 0%,
-    var(--ifm-background-color) 40%
-  );
+  background: linear-gradient(135deg,
+      var(--ifm-color-primary-lighter) 0%,
+      var(--ifm-background-color) 40%);
   animation: fadeIn 1.2s ease-in-out;
 }
 
@@ -26,11 +24,9 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  background: radial-gradient(
-    circle,
-    var(--ifm-color-primary-lightest) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      var(--ifm-color-primary-lightest) 0%,
+      transparent 70%);
   top: -150px;
   left: -150px;
   opacity: 0.5;
@@ -86,11 +82,9 @@
 -------------------------------------------*/
 .ctaSection {
   padding: 4rem 0;
-  background: linear-gradient(
-    150deg,
-    var(--ifm-color-primary-darkest),
-    var(--ifm-color-primary-darker)
-  );
+  background: linear-gradient(150deg,
+      var(--ifm-color-primary-darkest),
+      var(--ifm-color-primary-darker));
   text-align: center;
   color: var(--ifm-color-on-primary);
   animation: fadeIn 1.4s ease-in-out;
@@ -130,15 +124,78 @@
   margin: 0 auto 3.5rem;
 }
 
-.roadmapVisual img {
-  max-width: 100%;
-  border-radius: 14px;
-  box-shadow: var(--ifm-global-shadow-lg);
-  transition: transform 0.4s ease;
+.roadmapPathway {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.roadmapVisual:hover img {
-  transform: scale(1.02);
+.roadmapStep {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-border-color);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+  min-width: 150px;
+}
+
+.roadmapStep:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--ifm-color-primary);
+}
+
+.stepNumber {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  color: white;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 0 auto 1.2rem auto;
+  box-shadow: 0 4px 10px rgba(229, 57, 53, 0.4);
+}
+
+.roadmapStep h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-font-color-base);
+  font-size: 1.15rem;
+}
+
+.roadmapStep p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.roadmapLine {
+  height: 4px;
+  width: 50px;
+  background: linear-gradient(90deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-lightest) 100%);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  .roadmapPathway {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .roadmapLine {
+    width: 4px;
+    height: 35px;
+    background: linear-gradient(180deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-lightest) 100%);
+  }
 }
 
 
@@ -174,11 +231,9 @@
 .modulesSection {
   padding: 4rem 0;
   text-align: center;
-  background: linear-gradient(
-    160deg,
-    var(--ifm-color-primary-darkest),
-    var(--ifm-color-primary)
-  );
+  background: linear-gradient(160deg,
+      var(--ifm-color-primary-darkest),
+      var(--ifm-color-primary));
   color: var(--ifm-color-on-primary);
   border-radius: 40px 40px 0 0;
 }
@@ -263,18 +318,39 @@
    ANIMATIONS
 -------------------------------------------*/
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes floating {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(40px, 30px); }
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(40px, 30px);
+  }
 }
 
 
@@ -285,6 +361,7 @@
   .hero__title {
     font-size: 2.7rem;
   }
+
   .moduleCard {
     width: 90%;
     max-width: 350px;
@@ -295,9 +372,11 @@
   .hero__title {
     font-size: 2.2rem;
   }
+
   .hero__subtitle {
     font-size: 1rem;
   }
+
   .modulesSection {
     padding: 3rem 1rem;
   }

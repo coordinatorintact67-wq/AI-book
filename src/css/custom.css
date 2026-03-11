@@ -4,14 +4,15 @@
  */
 
 :root {
-  /* Primary (Red) Palette */
-  --ifm-color-primary: #E53935;
-  --ifm-color-primary-dark: #C62828;
-  --ifm-color-primary-darker: #B71C1C;
-  --ifm-color-primary-darkest: #8B0000;
-  --ifm-color-primary-light: #EF5350;
-  --ifm-color-primary-lighter: #E57373;
-  --ifm-color-primary-lightest: #FFCDD2;
+  /* Primary (Indigo) Palette */
+  --ifm-color-primary: #4f46e5;
+  --ifm-color-primary-dark: #4338ca;
+  --ifm-color-primary-darker: #3730a3;
+  --ifm-color-primary-darkest: #312e81;
+  --ifm-color-primary-light: #6366f1;
+  --ifm-color-primary-lighter: #818cf8;
+  --ifm-color-primary-lightest: #a5b4fc;
+  --ifm-footer-padding-vertical: 1.5rem;
 
   /* Secondary / Neutral */
   --ifm-color-secondary: #9b9a9a;
@@ -50,10 +51,11 @@
 /* DARK MODE ---------------------------------------------------- */
 [data-theme='dark'] {
   /* Primary dark variations */
-  --ifm-color-primary: #C62828;
-  --ifm-color-primary-dark: #A50000;
-  --ifm-color-primary-darker: #8B0000;
-  --ifm-color-primary-darkest: #6A0000;
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-lightest: #818cf8;
 
   /* Secondary lighter neutrals */
   --ifm-color-secondary: #E0E0E0;
@@ -90,7 +92,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Inter', 'Roboto', sans-serif;
   font-weight: 600;
   letter-spacing: -0.015em;
@@ -150,6 +157,22 @@ a:hover {
   box-shadow: var(--shadow-sm);
   transition: var(--ifm-transition);
   padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.moduleCard .card__body {
+  flex: 1;
+}
+
+.footer {
+  padding-top: 2rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.footer__links {
+  margin-bottom: 1rem !important;
 }
 
 .moduleCard:hover {
@@ -171,7 +194,15 @@ img {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.9rem; }
-  p { font-size: 1rem; }
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
